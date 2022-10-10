@@ -5,17 +5,19 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAtGLApplc3oOQPHsaOq5d3AP2P1rx6dZA",
-  authDomain: "crwn-clothing-db-b1d4e.firebaseapp.com",
-  projectId: "crwn-clothing-db-b1d4e",
-  storageBucket: "crwn-clothing-db-b1d4e.appspot.com",
-  messagingSenderId: "763566710957",
-  appId: "1:763566710957:web:ba4c4532fdfbb28b2f6624"
+  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
+  authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
+  projectId: 'crwn-clothing-db-98d4d',
+  storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
+  messagingSenderId: '626766232035',
+  appId: '1:626766232035:web:506621582dab103a4d08d6',
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -56,12 +58,7 @@ export const createUserDocumentFromAuth = async (
         ...additionalInformation,
       });
     } catch (error) {
-      
-      if(error.code === "auth/email-already-in-use"){
-        alert('Email already in use');
-      }else{
-        console.log('error creating the user', error.message);
-      }
+      console.log('error creating the user', error.message);
     }
   }
 
@@ -79,3 +76,8 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);

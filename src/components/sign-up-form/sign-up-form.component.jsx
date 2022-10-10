@@ -20,7 +20,8 @@ const SignUpForm = () => {
   //structure off forumFields for readability(just call displayName instead of formFields.displayName...etc)
   const { displayName, email, password, confirmPassword } = formFields;
 
-  console.log(formFields);
+
+  
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -36,7 +37,6 @@ const SignUpForm = () => {
         email,
         password
       );
-
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
