@@ -12,12 +12,12 @@ import {
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
-  authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
-  projectId: 'crwn-clothing-db-98d4d',
-  storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
-  messagingSenderId: '626766232035',
-  appId: '1:626766232035:web:506621582dab103a4d08d6',
+  apiKey: "AIzaSyAtGLApplc3oOQPHsaOq5d3AP2P1rx6dZA",
+  authDomain: "crwn-clothing-db-b1d4e.firebaseapp.com",
+  projectId: "crwn-clothing-db-b1d4e",
+  storageBucket: "crwn-clothing-db-b1d4e.appspot.com",
+  messagingSenderId: "763566710957",
+  appId: "1:763566710957:web:ba4c4532fdfbb28b2f6624"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
